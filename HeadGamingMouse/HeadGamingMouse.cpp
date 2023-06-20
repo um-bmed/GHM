@@ -130,6 +130,7 @@ void HeadGamingMouse::demo_gamepad()
 
 void HeadGamingMouse::demo_imu()
 {
+    Serial.println("demo_imu()");
     if ( imu->isConnected() )
     {
         imu->read();
@@ -148,6 +149,7 @@ void HeadGamingMouse::demo_imu()
  */
 void HeadGamingMouse::process()
 {
+    //Serial.println("process()");
     cur_time = millis();
 
     // poll gyroscope within a certain time interval
