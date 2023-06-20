@@ -44,6 +44,7 @@
 //
 GY521::GY521(uint8_t address, TwoWire *wire)
 {
+  Serial.begin( 115200 );
   _address = address;
   _wire    = wire;
   reset();
@@ -77,7 +78,14 @@ bool GY521::begin()
 bool GY521::isConnected()
 {
   _wire->beginTransmission(_address);
-  return (_wire->endTransmission() == 0);
+  int response = _wire->endTransmission();
+  //if (response == 5) {
+    //Serial.print("Timed out");
+    //Serial.println();
+  //} else {
+    //Serial.print(response);
+  //}
+  return (response == 0);
 }
 
 void GY521::reset()
@@ -318,4 +326,3 @@ int16_t GY521::_WireRead2()
 
 
 // -- END OF FILE --
-
