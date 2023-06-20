@@ -79,12 +79,12 @@ bool GY521::isConnected()
 {
   _wire->beginTransmission(_address);
   int response = _wire->endTransmission();
-  if (response == 5) {
-    Serial.print("Timed out");
-    Serial.println();
-  } else {
-    Serial.print(response);
-  }
+  //if (response == 5) {
+    //Serial.print("Timed out");
+    //Serial.println();
+  //} else {
+    //Serial.print(response);
+  //}
   return (response == 0);
 }
 

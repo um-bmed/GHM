@@ -130,7 +130,7 @@ void HeadGamingMouse::demo_gamepad()
 
 void HeadGamingMouse::demo_imu()
 {
-    Serial.println("demo_imu()");
+    //Serial.println("demo_imu()");
     if ( imu->isConnected() )
     {
         imu->read();
